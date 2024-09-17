@@ -1,4 +1,4 @@
-FPS = 80
+FPS = 60
 WINDOW_SIZE = (288 * 3, 512)
 FLOOR_POS = 450
 
