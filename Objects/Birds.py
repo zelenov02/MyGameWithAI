@@ -58,4 +58,35 @@ class Birds:
             if self.angle > -90:
                 self.angle -= self.ROTATION_SPEED
 
+    def draw(self, screen):
+        self.anim_step += 1
+
+        if self.anim_step > self.ANIMATION_STEP * 6 + 1:
+            self.anim_step = 0
+
+        if self.angle <= -80:
+            self.cframe = self.frames[1]
+        else:
+            if self.anim_step <= self.ANIMATION_STEP:
+                self.cframe = self.frames[0]
+            elif self.anim_step <= self.ANIMATION_STEP * 2:
+                self.cframe = self.frames[1]
+            elif self.anim_step <= self.ANIMATION_STEP * 4:
+                self.cframe = self.frames[2]
+            elif self.anim_step <= self.ANIMATION_STEP * 6:
+                self.cframe = self.frames[1]
+            elif self.anim_step <= self.ANIMATION_STEP * 6 + 1:
+                self.cframe = self.frames[0]
+                self.anim_step = 0
+
+
+    def draw_name(self, screen, font):
+        c_label = font.render(self.name.capitalize(), True, (100, 100, 100))
+        c_label_rect = c_label.get_rect()
+        c_label_rect.center = (self.x + 25, self.y - 30)
+        screen.blit(c_label, c_label_rect)
+
+    def get_mask(self):
+        return pygame.mask.from_surface(self.cframe)
+
 
