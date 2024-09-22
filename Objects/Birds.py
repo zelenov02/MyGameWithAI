@@ -47,7 +47,7 @@ class Birds:
         drop = self.speed
 
         if drop >= 6:
-            drop = (drop/abs(drop)) * 6
+            drop = (drop / abs(drop)) * 6
 
         self.y += drop
 
