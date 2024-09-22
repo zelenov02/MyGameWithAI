@@ -87,5 +87,3 @@ class Birds:
 
     def get_mask(self):
         return pygame.mask.from_surface(self.cframe)
-
-
