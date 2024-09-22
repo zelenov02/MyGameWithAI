@@ -79,7 +79,6 @@ class Birds:
                 self.cframe = self.frames[0]
                 self.anim_step = 0
 
-
     def draw_name(self, screen, font):
         c_label = font.render(self.name.capitalize(), True, (100, 100, 100))
         c_label_rect = c_label.get_rect()
